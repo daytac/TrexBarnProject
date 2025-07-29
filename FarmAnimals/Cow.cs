@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrexBarn.FarmAnimals
 {
-    public class Cow:Animals
+    public class Cow : Animals 
     {
         public Cow(int age,string gender) 
         {
@@ -14,18 +14,19 @@ namespace TrexBarn.FarmAnimals
             Age = age;
             Gender = gender;
             Lifespan = 365 * 20;
-            ProductTime = 10;
-            ProductCount = 0;
-            ProductValue = 15;
-            AnimalValue = 100;
+            AnimalValue = 200;
 
-
-
+            CurrentProduct = new Product()
+            {
+                ProductName = "Süt",
+                ProductTime = 10,
+                ProductValue = 15
+            };
         }
-
-        public override void ProducePoduct()
-        {
-            ProductionProgres = 0;
-        }
+        public override void ProducePoduct() => ProductionProgres = 0;
+        //public override void ProducePoduct()
+        //{
+        //    ProductionProgres = 0;
+        //}
     }
 }

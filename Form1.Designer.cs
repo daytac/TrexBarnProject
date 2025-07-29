@@ -29,16 +29,17 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnBuy = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblBudget = new System.Windows.Forms.Label();
+            this.rdbMale = new System.Windows.Forms.RadioButton();
+            this.rdbFemale = new System.Windows.Forms.RadioButton();
             this.label10 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.txtAnimalAge = new System.Windows.Forms.TextBox();
+            this.cmbAnimalType = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -56,12 +57,10 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -74,36 +73,39 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(708, 13);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(619, 542);
             this.dataGridView1.TabIndex = 0;
             // 
-            // button1
+            // btnBuy
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkGray;
-            this.button1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.Location = new System.Drawing.Point(72, 207);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 35);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Satın Al";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnBuy.BackColor = System.Drawing.Color.DarkGray;
+            this.btnBuy.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnBuy.Location = new System.Drawing.Point(72, 207);
+            this.btnBuy.Name = "btnBuy";
+            this.btnBuy.Size = new System.Drawing.Size(150, 35);
+            this.btnBuy.TabIndex = 3;
+            this.btnBuy.Text = "Satın Al";
+            this.btnBuy.UseVisualStyleBackColor = false;
+            this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkGray;
-            this.panel2.Controls.Add(this.label19);
-            this.panel2.Controls.Add(this.label18);
-            this.panel2.Controls.Add(this.radioButton2);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.radioButton1);
+            this.panel2.Controls.Add(this.lblBudget);
+            this.panel2.Controls.Add(this.rdbMale);
+            this.panel2.Controls.Add(this.btnBuy);
+            this.panel2.Controls.Add(this.rdbFemale);
             this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.txtAnimalAge);
+            this.panel2.Controls.Add(this.cmbAnimalType);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
@@ -112,52 +114,39 @@
             this.panel2.Size = new System.Drawing.Size(315, 319);
             this.panel2.TabIndex = 4;
             // 
-            // label7
+            // lblBudget
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.Location = new System.Drawing.Point(26, 6);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(260, 74);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Satın Alınacak \r\nHayvanın Özellikleri";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            this.lblBudget.AutoSize = true;
+            this.lblBudget.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblBudget.Location = new System.Drawing.Point(97, 260);
+            this.lblBudget.Name = "lblBudget";
+            this.lblBudget.Size = new System.Drawing.Size(77, 37);
+            this.lblBudget.TabIndex = 16;
+            this.lblBudget.Text = "0000";
             // 
-            // label8
+            // rdbMale
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label8.Location = new System.Drawing.Point(68, 132);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(48, 24);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "Yaşı:";
+            this.rdbMale.AutoSize = true;
+            this.rdbMale.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.rdbMale.Location = new System.Drawing.Point(196, 176);
+            this.rdbMale.Name = "rdbMale";
+            this.rdbMale.Size = new System.Drawing.Size(70, 25);
+            this.rdbMale.TabIndex = 9;
+            this.rdbMale.TabStop = true;
+            this.rdbMale.Text = "Erkek";
+            this.rdbMale.UseVisualStyleBackColor = true;
             // 
-            // label9
+            // rdbFemale
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label9.Location = new System.Drawing.Point(62, 97);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(54, 24);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "Türü:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(135, 97);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(131, 24);
-            this.comboBox1.TabIndex = 5;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(135, 135);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(131, 22);
-            this.textBox1.TabIndex = 6;
+            this.rdbFemale.AutoSize = true;
+            this.rdbFemale.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.rdbFemale.Location = new System.Drawing.Point(135, 176);
+            this.rdbFemale.Name = "rdbFemale";
+            this.rdbFemale.Size = new System.Drawing.Size(57, 25);
+            this.rdbFemale.TabIndex = 8;
+            this.rdbFemale.TabStop = true;
+            this.rdbFemale.Text = "Dişi";
+            this.rdbFemale.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
@@ -169,29 +158,51 @@
             this.label10.TabIndex = 7;
             this.label10.Text = "Cinsiyeti:";
             // 
-            // radioButton1
+            // txtAnimalAge
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.radioButton1.Location = new System.Drawing.Point(135, 176);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(57, 25);
-            this.radioButton1.TabIndex = 8;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Dişi";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.txtAnimalAge.Location = new System.Drawing.Point(135, 135);
+            this.txtAnimalAge.Name = "txtAnimalAge";
+            this.txtAnimalAge.Size = new System.Drawing.Size(131, 22);
+            this.txtAnimalAge.TabIndex = 6;
             // 
-            // radioButton2
+            // cmbAnimalType
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.radioButton2.Location = new System.Drawing.Point(196, 176);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(70, 25);
-            this.radioButton2.TabIndex = 9;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Erkek";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.cmbAnimalType.FormattingEnabled = true;
+            this.cmbAnimalType.Location = new System.Drawing.Point(135, 97);
+            this.cmbAnimalType.Name = "cmbAnimalType";
+            this.cmbAnimalType.Size = new System.Drawing.Size(131, 24);
+            this.cmbAnimalType.TabIndex = 5;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label9.Location = new System.Drawing.Point(62, 97);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(54, 24);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Türü:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label8.Location = new System.Drawing.Point(68, 132);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(48, 24);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Yaşı:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label7.Location = new System.Drawing.Point(26, 6);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(260, 74);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Satın Alınacak \r\nHayvanın Özellikleri";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // progressBar1
             // 
@@ -210,7 +221,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Üretim\r\nİlerlemeleri";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -222,7 +232,6 @@
             this.label2.Size = new System.Drawing.Size(43, 24);
             this.label2.TabIndex = 3;
             this.label2.Text = "Süt:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // progressBar2
             // 
@@ -335,7 +344,6 @@
             this.label11.Size = new System.Drawing.Size(57, 48);
             this.label11.TabIndex = 5;
             this.label11.Text = "Ürün \r\nSayısı";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label12
             // 
@@ -372,25 +380,15 @@
             this.panel1.Size = new System.Drawing.Size(340, 319);
             this.panel1.TabIndex = 2;
             // 
-            // label13
+            // label17
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label13.Location = new System.Drawing.Point(281, 126);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(50, 24);
-            this.label13.TabIndex = 15;
-            this.label13.Text = "0000";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label14.Location = new System.Drawing.Point(281, 177);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(50, 24);
-            this.label14.TabIndex = 16;
-            this.label14.Text = "0000";
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label17.Location = new System.Drawing.Point(281, 274);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(50, 24);
+            this.label17.TabIndex = 18;
+            this.label17.Text = "0000";
             // 
             // label16
             // 
@@ -402,36 +400,25 @@
             this.label16.TabIndex = 17;
             this.label16.Text = "0000";
             // 
-            // label17
+            // label14
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label17.Location = new System.Drawing.Point(281, 274);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(50, 24);
-            this.label17.TabIndex = 18;
-            this.label17.Text = "0000";
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label14.Location = new System.Drawing.Point(281, 177);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(50, 24);
+            this.label14.TabIndex = 16;
+            this.label14.Text = "0000";
             // 
-            // label18
+            // label13
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label18.Location = new System.Drawing.Point(58, 265);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(83, 37);
-            this.label18.TabIndex = 15;
-            this.label18.Text = "Kasa:";
-            this.label18.Click += new System.EventHandler(this.label18_Click);
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label19.Location = new System.Drawing.Point(145, 265);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(77, 37);
-            this.label19.TabIndex = 16;
-            this.label19.Text = "0000";
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label13.Location = new System.Drawing.Point(281, 126);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(50, 24);
+            this.label13.TabIndex = 15;
+            this.label13.Text = "0000";
             // 
             // label20
             // 
@@ -464,7 +451,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(691, 117);
             this.panel3.TabIndex = 5;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // label21
             // 
@@ -487,6 +473,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
             this.Text = "Çiflik ";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -501,13 +488,13 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBuy;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rdbMale;
+        private System.Windows.Forms.RadioButton rdbFemale;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtAnimalAge;
+        private System.Windows.Forms.ComboBox cmbAnimalType;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -532,8 +519,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label lblBudget;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Panel panel3;

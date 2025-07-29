@@ -14,15 +14,20 @@ namespace TrexBarn.FarmAnimals
             Age = age;
             Gender = gender;
             Lifespan = 365 * 12;
-            ProductTime = 15;
-            ProductCount = 0;
-            ProductValue = 20;
-            AnimalValue = 150;
-        }
+            AnimalValue = 120;
 
-        public override void ProducePoduct()
-        {
-            ProductionProgres = 0;
+            CurrentProduct=new Product() 
+            {
+                ProductName ="Yün",
+                ProductTime = 15,
+                ProductValue = 20
+            };
         }
+        public override void ProducePoduct() => ProductionProgres = 0;
+
+        //public override void ProducePoduct()
+        //{
+        //    ProductionProgres = 0;
+        //}
     }
 }

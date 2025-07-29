@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Farm.cs" />
     <Compile Include="FarmAnimals\Animals.cs" />
     <Compile Include="FarmAnimals\Bee.cs" />
     <Compile Include="FarmAnimals\Chicken.cs" />
