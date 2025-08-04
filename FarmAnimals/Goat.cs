@@ -11,23 +11,20 @@ namespace TrexBarn.FarmAnimals
     {
         public Goat(int age, string gender)
         {
-            Species = "Goat";
+            Species = "Keçi";
             Age = age;
             Gender = gender;
-            Lifespan = 365 * 10;
+            Lifespan = 100;
             AnimalValue = 120;
 
             CurrentProduct=new Product()
             {
                 ProductName="Peynir",
-                ProductTime = 5,
-                ProductValue = 15
+                ProductTime = 25,
+                ProgressPerTick=4, // 100/25
+                ProductValue = 30
             };
         }
-        public override void ProducePoduct() => ProductionProgres = 0;
-        //public override void ProducePoduct()
-        //{
-        //    ProductionProgres = 0;
-        //}
+        public override void ProduceProduct() => ProductionProgress = 0;
     }
 }

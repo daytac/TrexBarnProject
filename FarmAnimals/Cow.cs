@@ -10,23 +10,21 @@ namespace TrexBarn.FarmAnimals
     {
         public Cow(int age,string gender) 
         {
-            Species = "Cow";
+            Species = "İnek";
             Age = age;
             Gender = gender;
-            Lifespan = 365 * 20;
-            AnimalValue = 200;
+            Lifespan = 120;
+            AnimalValue = 180;
 
             CurrentProduct = new Product()
             {
                 ProductName = "Süt",
-                ProductTime = 10,
+                ProductTime = 10,//10 saniyede bir üretir
+                ProgressPerTick=10,//saniyedeki ilerleme 100/10 dan gelir
                 ProductValue = 15
             };
         }
-        public override void ProducePoduct() => ProductionProgres = 0;
-        //public override void ProducePoduct()
-        //{
-        //    ProductionProgres = 0;
-        //}
+        public override void ProduceProduct() => ProductionProgress = 0;
+       
     }
 }

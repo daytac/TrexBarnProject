@@ -11,23 +11,20 @@ namespace TrexBarn.FarmAnimals
     {
         public Bee(int age, string gender)
         {
-            Species = "Bee";
+            Species = "Arı";
             Age = age;
             Gender = gender;
-            Lifespan = 365 * 10;
+            Lifespan = 60;
             AnimalValue = 100;
 
-            CurrentProduct=new Product()
+            CurrentProduct = new Product()
             {
-                ProductName="Bal",
+                ProductName = "Bal",
                 ProductTime = 20,
-                ProductValue = 5
+                ProgressPerTick=5, // 100/20
+                ProductValue = 25 
             };
         }
-        public override void ProducePoduct() => ProductionProgres = 0;
-        //public override void ProducePoduct()
-        //{
-        //    ProductionProgres = 0;
-        //}
+        public override void ProduceProduct() => ProductionProgress = 0;
     }
 }
